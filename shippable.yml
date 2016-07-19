@@ -2,7 +2,6 @@ language: java
 
 jdk:
   - openjdk8
-  - oraclejdk8
 
 env:
   global:
@@ -10,4 +9,5 @@ env:
 
 build:
   ci:
+    - sudo apt-get install openjdk-8-jdk
     - mvn clean verify -Dcoveralls-token=$COVERALLS_TOKEN -Dstorage.account=$STORAGE_ACCOUNT -Dstorage.key="$STORAGE_KEY"
