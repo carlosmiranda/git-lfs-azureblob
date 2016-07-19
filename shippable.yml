@@ -12,4 +12,4 @@ build:
     - sudo add-apt-repository ppa:openjdk-r/ppa
     - sudo apt-get update
     - sudo apt-get install openjdk-8-jdk
-    - mvn clean verify jacoco:report coveralls:report -Dcoveralls-token=$COVERALLS_TOKEN -Dstorage.account=$STORAGE_ACCOUNT -Dstorage.key="$STORAGE_KEY"
+    - mvn clean verify -Dcoveralls-token=$COVERALLS_TOKEN -Dstorage.account=$STORAGE_ACCOUNT -Dstorage.key="$STORAGE_KEY"
