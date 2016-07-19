@@ -61,7 +61,7 @@ public final class AzureBlobStorage implements ContentManager {
                 this.container.getBlockBlobReference(hash);
             final boolean exists = blob.exists();
             final Meta meta;
-            if (exists){
+            if (exists) {
                 meta = new Meta(hash, blob.getProperties().getLength());
             } else {
                 meta = null;
@@ -124,7 +124,7 @@ public final class AzureBlobStorage implements ContentManager {
             try {
                 return this.container
                     .getBlockBlobReference(hash).openInputStream();
-            } catch (StorageException | URISyntaxException ex) {
+            } catch (final StorageException | URISyntaxException ex) {
                 throw new IOException(ex);
             }
         }
