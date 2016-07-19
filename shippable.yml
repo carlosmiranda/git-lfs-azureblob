@@ -10,10 +10,10 @@ before_script:
 
 env:
   global:
-    - secure: e+i358lBUTiWnCexbLd1LRcVPVcAcqh+RzBh++6QOiDP6cjcPVWZnOj6b1CmXoBAp/afTVWvHFfx7Ys/dpM2DuOfDcwX7sEJyk1Ee8KeqbMJAmvSP3XntbBLKx1knZjrUx9xfdZsMVys9Ho1iOQu8AIkwGVSWakdMTHt1wkvGJ1S3udG0B+P4bdEYv4dA48odutQzX1GmtVWm/8YvfnVMdhC7+5eOl3o4Otsap28upTr4oNuhC2yayjgFzXrAQ9/VV90Nj83XYSsaAWlviCzMTlxDOxJuKg0w6FfhRIZSzp27Ctj3NM75tegpBhGYxLKmhJU8YyfVCBqV10Ls9ncRA==
+    - secure: jTQkpdav2liE+ASPyeA6eCU+4oeVjPHeemfcVneimNnM4ySSPtIMB+gwtCbw9EwtHL15JplPz9AswMucWZ7VFeijrfW91WM66EKpUXjhYeozkOdE1l1I8xc2tRfyCoENSTie2rBtb2PMo5piLUHhVsnoacLG7cnU901EHjgTqS8X+S3v+eHMHe2UcqhBJDSkye2qixvDmpqDywan43N65IGItPJZBU8XboGdlo9/HRTxxZrYCeB+FjrGJEIuOXxr4SZTWHVVRoC5MO9h9Vzfbfjl2pGU/xQMj9r1ZtRuhMcjVRaI/6DarmE2+X9Vkn4NbTSGaB7GP/Sd5spqIHhs0g==
 
 build:
   ci:
     - sudo update-alternatives --set java /usr/lib/jvm/java-8-oracle/jre/bin/java
     - sudo update-alternatives --set javac /usr/lib/jvm/java-8-oracle/bin/javac
-    - mvn clean verify coveralls:report jacoco:report -Dcoveralls.token=$COVERALLS_TOKEN -Dstorage.account=$STORAGE_ACCOUNT -Dstorage.key=$STORAGE_KEY
+    - mvn clean verify coveralls:report jacoco:report -Dcoveralls.token="$COVERALLS_TOKEN" -Dstorage.account="$STORAGE_ACCOUNT" -Dstorage.key="$STORAGE_KEY"
