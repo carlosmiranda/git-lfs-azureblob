@@ -16,4 +16,4 @@ build:
   ci:
     - sudo update-alternatives --set java /usr/lib/jvm/java-8-oracle/jre/bin/java
     - sudo update-alternatives --set javac /usr/lib/jvm/java-8-oracle/bin/javac
-    - mvn clean verify coveralls:report jacoco:report -Dcoveralls-token=$COVERALLS_TOKEN -Dstorage.account=$STORAGE_ACCOUNT -Dstorage.key="$STORAGE_KEY"
+    - mvn clean verify coveralls:report jacoco:report -Dcoveralls.token=$COVERALLS_TOKEN -Dstorage.account=$STORAGE_ACCOUNT -Dstorage.key=$STORAGE_KEY
