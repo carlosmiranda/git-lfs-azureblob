@@ -43,7 +43,7 @@ public final class LfsServerITCase {
     public static AzureStorageContainer container = new AzureStorageContainer();
 
     /**
-     * AzureLfsServer can upload and download files.
+     * LfsServer can upload and download files.
      * @throws Exception If something goes wrong.
      */
     @Test

@@ -88,9 +88,9 @@ public final class AzureStorageContainer extends ExternalResource {
         if (AzureStorageContainer.testShouldExecute()) {
             try {
                 this.container().deleteIfExists();
-            // @checkstyle IllegalCatch (1 line)
+                // @checkstyle IllegalCatch (1 line)
             } catch (final Exception ex) {
-                throw new RuntimeException(ex);
+                throw new IllegalStateException(ex);
             }
         }
     }

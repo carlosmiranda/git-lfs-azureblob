@@ -40,11 +40,6 @@ final class LfsServer implements AutoCloseable {
      */
     @NotNull
     private final ServerConnector http;
-    /**
-     * Servlet handler.
-     */
-    @NotNull
-    private final ServletHandler handler;
 
     /**
      * Ctor. Creates server on random port (for testing).
@@ -70,9 +65,9 @@ final class LfsServer implements AutoCloseable {
         // @checkstyle MagicNumber (1 line)
         this.http.setIdleTimeout(30000);
         this.server.addConnector(this.http);
-        this.handler = new ServletHandler();
-        this.server.setHandler(this.handler);
-        this.handler.addServletWithMapping(
+        final ServletHandler handler = new ServletHandler();
+        this.server.setHandler(handler);
+        handler.addServletWithMapping(
             new ServletHolder(
                 new PointerServlet(
                     storage, String.format("%s/info/lfs/storage/", path)
@@ -80,7 +75,7 @@ final class LfsServer implements AutoCloseable {
             ),
             String.format("%s/info/lfs/objects/*", path)
         );
-        this.handler.addServletWithMapping(
+        handler.addServletWithMapping(
             new ServletHolder(new ContentServlet(storage)),
             String.format("%s/info/lfs/storage/*", path)
         );
