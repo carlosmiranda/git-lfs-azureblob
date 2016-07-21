@@ -61,7 +61,7 @@ public final class AzureStorageContainer extends ExternalResource {
         Boolean.valueOf(System.getProperty("storage.emulated"));
 
     /**
-     * Storage container test.
+     * Name of storage container to test.
      */
     private final String cont;
 
